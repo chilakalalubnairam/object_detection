@@ -1,0 +1,17 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.result img {
+    width: 500px;
+    margin-top: 20px;
+}
