@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blind Assistance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Object Detection for Blind Assistance</h1>
+
+    <div class="buttons">
+        <button onclick="startCamera()">Start Detection</button>
+        <button onclick="stopCamera()">Stop Detection</button>
+    </div>
+
+    <div class="result">
+        <img id="videoFeed" src="" width="700">
+    </div>
+
+<script>
+function startCamera() {
+    fetch('/start')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("videoFeed").src = "/video";
+    });
+}
+
+function stopCamera() {
+    fetch('/stop')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("videoFeed").src = "";
+    });
+}
+</script>
+
+</body>
+</html>
